@@ -1,3 +1,6 @@
+   <?php 
+session_start()
+?>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,6 +23,19 @@
                         </li>
                     </ul>
                 </div>
+                <div style="margin-right: 10px;">
+                    <?php
+                        $sapa = date('H');
+                        if($sapa <= '12'){
+                            echo "pagi ";
+                        }else if($sapa <= '17'){
+                             echo "Sore ";
+                        }else{
+                            echo "Malem ";
+                        }
+                        echo $_SESSION['username']; 
+                    ?>
+                </div>
             </div>
-              <button> <a href="../../logout.php" >logout</a></button>
+              <button> <a href="../../logout.php" >LOGOUT</a></button>
         </nav>

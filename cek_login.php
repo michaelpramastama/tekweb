@@ -18,6 +18,7 @@ $cek = mysqli_num_rows($data);
 
 
 if($cek > 0){
+	$_SESSION['username'] = $username;
 	header("location:pages/timeline/index.php");	
 }else{
 	header("location:index.php?pesan=gagal");
