@@ -11,48 +11,14 @@ $username = mysqli_real_escape_string($koneksi, $_POST['username']);
 $password = mysqli_real_escape_string($koneksi, md5($_POST['password']));
 
 // menyeleksi data admin dengan username dan password yang sesuai
-$data = mysqli_query($koneksi,"select * from user where username='$username' and pswd='$password'");
+$data = mysqli_query($koneksi,"select * from user where username='$username' and password='$password'");
 
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($data);
 
 
 if($cek > 0){
-$cek_login = mysqli_fetch_assoc($data);
-
-$cek_login['agent'] = $_SESSION['agent1'];
- if($cek_login['level']=="admin"){
- 
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "admin";
-	
-		// alihkan ke halaman dashboard admin
-		header("location:administrator");
-	// cek jika user login sebagai agent
-	}else if($cek_login['level']=="agent"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "agent";
-			
-		// alihkan ke halaman dashboard pegawai
-		header("location:agent");
- 		
-	// cek jika user login sebagai pengurus
-	}else if($cek_login['level']=="owner"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "owner";
-			
-		// alihkan ke halaman dashboard pegawai
-		header("location: owner");
- 		
-	// cek jika user login sebagai pengurus
-	}else{
- 
-		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
-	}	
+	header("location:pages/timeline/index.php");	
 }else{
 	header("location:index.php?pesan=gagal");
 }

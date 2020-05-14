@@ -2,17 +2,12 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="shortcut icon" href="image/truck.png">
-   <link rel="stylesheet" type="text/css" href="include/css/bootstrap.css">
-   <link rel="stylesheet" type="text/css" href="include/style.css">
-   <link rel="stylesheet" type="text/css" href="include/sweetalert.css">
+	<link rel="shortcut icon" href="">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
-	<!-- <center>
-    <h2>MABA CUP 2019</h2>
-    </center>
-	<br/> -->
-	<!-- cek pesan notifikasi -->
+
 	<?php 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan'] == "gagal"){
@@ -36,7 +31,6 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="avatar">
-					<img src="image/lock.png" alt="Avatar">
 				</div>				
 				<h4 class="modal-title">Login</h4>	
 			</div>
@@ -52,41 +46,17 @@
 						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
 					</div>
 				</form>
+				<p>Belum Punya Akun ? <a href="daftar.php">Klik Disini</a></p>
 			</div>
 			<div class="modal-footer">
-				<a href="#">PT. Logistik</a>
+				<a href="#">Sosmed</a>
 			</div>
 		</div>
-        
 	</div>
 </div>
 
-
-
-
-<!-- 
-	<div class="kotak_login">
-		<p class="tulisan_login">Silahkan login</p>
- 
-		<form action="cek_login.php" method="post">
-			<label>Username</label>
-			<input type="text" name="username" class="form_login" placeholder="Username .." required="required">
- 
-			<label>Password</label>
-			<input type="password" name="password" class="form_login" placeholder="Password .." required="required">
- 
-			<input type="submit" class="tombol_login" value="LOGIN">
- 
-			<br/>
-			<br/>
-			
-		</form>
-		
-	</div> -->
-  
-
-    <script src="include/js/jquery.min.js"></script>
-    <script src="include/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
    
 </body>
 </html>
